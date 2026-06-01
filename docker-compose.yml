@@ -4,8 +4,8 @@ services:
   restate-server:
     image: docker.io/restatedev/restate:latest
     ports:
-      - "8080:8080" # Cổng gửi request xử lý dữ liệu công việc (Ingress)
-      - "9070:9070" # Cổng quản trị của Restate (Admin CLI)
+      - "8080:8080"
+      - "9070:9070"
     environment:
       - RESTATE_LOG_LEVEL=info
 
@@ -20,4 +20,3 @@ services:
       - PORT=9080
     depends_on:
       - restate-server
-

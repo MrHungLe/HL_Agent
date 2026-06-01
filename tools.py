@@ -1,4 +1,4 @@
-# Giả lập database hoặc API hệ thống
+
 PRODUCTS_DB = {
     "giày running x": "Còn 5 đôi size 42, giá 1.500.000đ. Đang có khuyến mãi tặng tất.",
     "áo khoác gió": "Hết hàng màu đen, chỉ còn màu xanh size L. Giá 500.000đ.",
