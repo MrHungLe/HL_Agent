@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  restate-server:
+    image: docker.io/restatedev/restate:latest
+    ports:
+      - "8080:8080" # Cổng gửi request xử lý dữ liệu công việc (Ingress)
+      - "9070:9070" # Cổng quản trị của Restate (Admin CLI)
+    environment:
+      - RESTATE_LOG_LEVEL=info
+
+  ai-agent:
+    build: .
+    ports:
+      - "9080:9080"
+    volumes:
+      - .:/app
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - PORT=9080
+    depends_on:
+      - restate-server
+
